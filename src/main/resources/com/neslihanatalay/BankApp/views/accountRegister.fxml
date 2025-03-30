@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<GridPane
+    xmlns:fx="http://javafx.com/fxml"
+    fx:controller="main.java.com.neslihanatalay.BankApp.controller.AccountController"
+    alignment="center" hgap="10" vgap="10"
+    style="-fx-padding: 20;">
+    <Button text="Hesap Kaydetme" onAction="#accountRegister" GridPane.rowIndex="0" GridPane.columnIndex="0" />
+</GridPane>
