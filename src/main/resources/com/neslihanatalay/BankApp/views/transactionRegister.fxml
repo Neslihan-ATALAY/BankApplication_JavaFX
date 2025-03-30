@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<GridPane
+    xmlns:fx="http://javafx.com/fxml"
+    fx:controller="main.java.com.neslihanatalay.BankApp.controller.TransactionController"
+    alignment="center" hgap="10" vgap="10"
+    style="-fx-padding: 20;">
+    
+    <Label text="Para gönderilecek hesabı seçiniz (Listede hesap yok ise sonraki alanları doldurunuz):" GridPane.rowIndex="0" GridPane.columnIndex="0" />
+    <ComboBox fx:id="toAccountIdField" GridPane.rowIndex="1" GridPane.columnIndex="0" layoutX="20" layoutY="20" />
+    
+    <Label text="Gönderilecek paranın miktarını yazınız:" GridPane.rowIndex="2" GridPane.columnIndex="0" />
+    <TextField fx:id="moneyQuantityField" GridPane.rowIndex="3" GridPane.columnIndex="0" />
+
+    <Label text="Para gönderilecek kişinin adı soyadını yazınız:" GridPane.rowIndex="4" GridPane.columnIndex="0" />
+    <TextField fx:id="toNameSurnameField" GridPane.rowIndex="5" GridPane.columnIndex="0" />
+
+    <Label text="Kişinin hesabının banka adını seçiniz:" GridPane.rowIndex="6" GridPane.columnIndex="0" />
+    <ComboBox fx:id="toBankIdField" GridPane.rowIndex="7" GridPane.columnIndex="0" layoutX="20" layoutY="20" />
+
+    <Label text="Kişinin hesabının IBAN numarasını yazınız:" GridPane.rowIndex="8" GridPane.columnIndex="0" />
+    <TextField fx:id="toIbanAccountNumberField" GridPane.rowIndex="9" GridPane.columnIndex="0" />
+
+    <Label text="Açıklamalar:" GridPane.rowIndex="10" GridPane.columnIndex="0" />
+    <TextField fx:id="descriptionField" GridPane.rowIndex="11" GridPane.columnIndex="0" />
+
+    <Button text="Gönder" onAction="#transactionRegister" GridPane.rowIndex="12" GridPane.columnIndex="0" />
+</GridPane>
