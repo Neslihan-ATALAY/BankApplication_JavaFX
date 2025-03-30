@@ -78,7 +78,7 @@ public class UserController {
             } else {
                 userDAO.showAlert("Uyarı", "Kullanıcı Kaydı Başarısız", Alert.AlertType.ERROR);
                 userDAO.switchToPage(FXMLPath.USERREGISTER, "Yeni Kullanıcı");
-			}
+	    }
         }
     }
 
