@@ -67,7 +67,7 @@ public class UserDAO implements IDaoImplements<UserDTO> {
                         .address(resultSet.getString("address"))
                         .createDate(resultSet.getDateTime("createDate"))
                         .updateDate(resultSet.getDateTime("updateDate"))
-			  .build());
+			.build());
             }
             return Optional.of(userDTOList);
         } catch (Exception exception) {
@@ -100,8 +100,8 @@ public class UserDAO implements IDaoImplements<UserDTO> {
                 preparedStatement.setString(3, userDTO.getPassword());
                 preparedStatement.setString(4, userDTO.getTCNumber());
                 preparedStatement.setString(5, userDTO.getAddress());
-            	  preparedStatement.setDateTime(6, userDTO.getCreateDate());
-            	  preparedStatement.setDateTime(7, userDTO.getUpdateTime());
+            	preparedStatement.setDateTime(6, userDTO.getCreateDate());
+            	preparedStatement.setDateTime(7, userDTO.getUpdateTime());
                 preparedStatement.setInt(8, id);
 
                 int affectedRows = preparedStatement.executeUpdate();
@@ -147,8 +147,8 @@ public class UserDAO implements IDaoImplements<UserDTO> {
         	.password(resultSet.getString("password"))
         	.TCNumber(resultSet.getString("TCNumber"))
          	.address(resultSet.getString("address"))
-          .createDate(resultSet.getDateTime("createDate"))
-          .updateDate(resultSet.getDateTime("updateDate"))
+          	.createDate(resultSet.getDateTime("createDate"))
+          	.updateDate(resultSet.getDateTime("updateDate"))
          	.build();
     }
 
