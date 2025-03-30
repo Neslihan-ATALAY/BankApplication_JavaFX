@@ -1,0 +1,140 @@
+package main.java.com.neslihanatalay.BankApp.dto;
+import java.time.LocalDateTime;
+import lombok.*;
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
+@ToString
+@Builder
+public class TransactionDTO {
+    private Integer id;
+    private Integer transactionTypeId;
+    private TransactionTypeDTO transactionType;
+    private Integer accountId;
+    private AccountDTO account;
+    private Integer toAccountId;
+    private AccountDTO toAccount;
+    private Double moneyQuantity;
+    private String toNameSurname;
+    private Integer toBankId;
+    private BankDTO toBank;
+    private String toIbanAccountNumber;
+    private String description;
+    private LocalDateTime transactionDate;
+
+    public TransactionDTO() {}
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public Integer getTransactionTypeId() {
+        return transactionTypeId;
+    }
+
+    public void setTransactionTypeId(Integer transactionTypeId) {
+        this.transactionTypeId = transactionTypeId;
+    }
+
+    public TransactionTypeDTO getTransactionType() {
+        return transactionType;
+    }
+
+    public void setTransactionType(TransactionTypeDTO transactionType) {
+        this.transactionType = transactionType;
+    }
+
+    public Integer getAccountId() {
+        return accountId;
+    }
+
+    public void setAccountId(Integer accountId) {
+        this.accountId = accountId;
+    }
+
+    public AccountDTO getAccount() {
+        return account;
+    }
+
+    public void setAccount(AccountDTO account) {
+        this.account = account;
+    }
+
+    public Integer getToAccountId() {
+        return toAccountId;
+    }
+
+    public void setToAccountId(Integer toAccountId) {
+        this.toAccountId = toAccountId;
+    }
+
+    public AccountDTO getToAccount() {
+        return toAccount;
+    }
+
+    public void setToAccount(AccountDTO toAccount) {
+        this.toAccount = toAccount;
+    }
+
+    public Double getMoneyQuantity() {
+        return moneyQuantity;
+    }
+
+    public void setMoneyQuantity(Double moneyQuantity) {
+        this.moneyQuantity = moneyQuantity;
+    }
+
+    public String getToNameSurname() {
+	      return toNameSurname;
+    }
+
+    public void setToNameSurname(String toNameSurname) {
+	      this.toNameSurname = toNameSurname;
+    }
+
+    public Integer getToBankId() {
+	      return toBankId;
+    }
+
+    public void setToBankId(Integer toBankId) {
+	      this.toBankId = toBankId;
+    }
+
+    public BankDTO getToBank() {
+	      return toBank;
+    }
+
+    public void setToBank(BankDTO toBank) {
+	      this.toBank = toBank;
+    }
+
+    public String getToIbanAccountNumber() {
+    	  return toIbanAccountNumber;
+    }
+
+    public void setToIbanAccountNumber(String toIbanAccountNumber) {
+	      this.toIbanAccountNumber = toIbanAccountNumber;
+    }
+
+    public String getDescription() {
+    	  return description;
+    }
+
+    public void setDescription(String toDescription) {
+	      this.description = toDescription;
+    }
+
+
+    public LocalDateTime getTransactionDate() {
+    	  return transactionDate;
+    }
+
+    public void setTransactionDate(LocalDateTime transactionDate) {
+	      this.transactionDate = transactionDate;
+    }
+}
