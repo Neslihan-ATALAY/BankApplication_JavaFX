@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.fxml.FXML?>
+<?import javafx.fxml.FXMLLoader?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.Button?>
+<VBox alignment="CENTER" spacing="20.0" xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.neslihanatalay.BankApp.AccountController">
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
+    </padding>
+    <Label fx:id="welcomeText"/>
+    <Button text="Hesap Oluştur" onAction="#switchToPage(FXMLPath.ACCOUNTREGISTER, "Yeni Hesap")"/>
+    <Button text="Para Çekme" onAction="#switchToPage(FXMLPath.SETMONEY, "Para Yatırma")"/>
+    <Button text="Para Yatırma" onAction="#switchToPage((FXMLPath.GETMONEY, "Para Çekme"))"/>
+</VBox>
+<VBox alignment="CENTER" spacing="20.0" xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.neslihanatalay.BankApp.TransactionController">
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
+    </padding>
+    <Button text="Para Gönderme" onAction="#switchToPage(FXMLPath.SENDMONEY, "Para Gönderme")"/>
+</VBox>
