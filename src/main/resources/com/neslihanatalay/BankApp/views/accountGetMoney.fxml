@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<VBox
+    xmlns:fx="http://javafx.com/fxml"
+    fx:controller="main.java.com.neslihanatalay.BankApp.controller.AccountController"
+    alignment="center" hgap="10" vgap="10"
+    style="-fx-padding: 20;">    
+    <Label text="Çekilecek paranın miktarını yazınız:" GridPane.rowIndex="0" GridPane.columnIndex="0" />
+    <TextField fx:id="moneyQuantityField" GridPane.rowIndex="1" GridPane.columnIndex="0" />
+    <Label text="Açıklamalar:" GridPane.rowIndex="2" GridPane.columnIndex="0" />
+    <TextField fx:id="descriptionField" GridPane.rowIndex="3" GridPane.columnIndex="0" />   
+    <Button text="Para Çekme" onAction="#accountGetMoney" GridPane.rowIndex="4" GridPane.columnIndex="0" />
+</VBox>
