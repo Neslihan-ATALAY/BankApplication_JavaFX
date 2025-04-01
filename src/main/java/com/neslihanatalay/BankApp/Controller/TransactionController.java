@@ -95,7 +95,7 @@ public class TransactionController {
 		transactionDAO.showAlert("Hata", "Para gönderilecek hesap bulunamadı, lütfen hesap bilgilerinizi güncelleyiniz ya da sisteme tekrar giriş yapınız.", Alert.AlertType.ERROR);
 		transactionDAO.switchToPage(FXMLPath.ACCOUNTUPDATE, "Hesap Güncelleme");
 	    } else {
-                toAccountId = Integer.valueOf(toAccountIdField.getText());
+                toAccountId = Integer.valueOf(toAccountIdField.getSelectedIndex());
 		fieldMoneyQuantity = Double.valueOf(moneyQuantityField.getText());
 		if (fieldMoneyQuantity == 0.0) {
 		    transactionDAO.showAlert("Uyarı", "Para miktarı alanını sıfırdan farklı doldurunuz, lütfen işleminizi tekrar deneyiniz.", Alert.AlertType.WARNING);
@@ -103,7 +103,7 @@ public class TransactionController {
 		}
 		newMoneyQuantity = (moneyQuantity - fieldMoneyQuantity);
 		toNameSurname = toNameSurnameField.getText().trim();
-		toBankId = Integer.valueOf(toBankIdField.getText());
+		toBankId = Integer.valueOf(toBankIdField.getSelectedIndex());
 		toIbanAccountNumber = toIbanAccountNumberField.getText().trim();
 		description = descriptionField.getText().trim();
 		Locale locale = new Locale("tr", "TR");
