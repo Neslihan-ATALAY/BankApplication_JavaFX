@@ -44,22 +44,25 @@ public class UserController {
         password = passwordField.getText().trim();
         TCNumber = TCNumberField.getText().trim();
         address = addressField.getText().trim();
-	now = dateAndTimeNow();
+	Locale locale = new Locale("tr", "TR");
+	DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MMMM-yyyy HH:mm:ss", locale);
+	LocalDateTime now = LocalDateTime.now().format(formatter);
+	transactionDate = now;
 	createDate = now;
 	updateDate = now;
 
 	if (name != "" && surname != "" && password != "" && TCNumber != "") {
-	    userDAO.showAlert("Uyarı", "Ad, soyad, şifre ve TC kimlik numarası alanlarını doldurmak zorunludur, alanları boş bırakmayınız", Alert.WARNING);
+	    userDAO.showAlert("Uyarı", "Ad, soyad, şifre ve TC kimlik numarası alanlarını doldurmak zorunludur, alanları boş bırakmayınız", Alert.AlertType.WARNING);
 	    userDAO.switchToPage(FXMLPath.USERREGISTER, "Yeni Kullanıcı");
 	}
 	Optional<UserDTO> findUserDTO = userDAO.findByTCNumber(TCNumber);
 	if (findUserDTO.isPresent()) {
-	    userDAO.showAlert("Uyarı", "TC Kimlik Numarası Sistemde Kayıtlı, TC Kimlik Numaranız ve Şifreniz ile Uygulamaya Giriş Yapabilirsiniz.", Alert.WARNING);
+	    userDAO.showAlert("Uyarı", "TC Kimlik Numarası Sistemde Kayıtlı, TC Kimlik Numaranız ve Şifreniz ile Uygulamaya Giriş Yapabilirsiniz.", Alert.AlertType.WARNING);
 	    userDAO.switchToPage(FXMLPath.USERREGISTER, "Yeni Kullanıcı");
 	}
 
         Optional<UserDTO> optionalRegisterUserDTO = Optional.ofNullable(UserDTO.builder()
-                .id(0)
+                //.id(0)
                 .name(name)
                 .surname(surname)
                 .password(password)
