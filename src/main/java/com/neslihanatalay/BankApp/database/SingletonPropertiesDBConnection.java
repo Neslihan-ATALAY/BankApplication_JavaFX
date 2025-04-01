@@ -13,7 +13,7 @@ public class SingletonPropertiesDBConnection {
     private SingletonPropertiesDBConnection() {
         try {
             loadDatabaseConfig();
-            Class.forName("org.mysql.Driver");
+            Class.forName("com.mysql.jdbc.Driver");
             this.connection = DriverManager.getConnection(URL, USERNAME, PASSWORD);
             System.out.println("Veritabanı bağlantısı başarılı");
         } catch (Exception e) {
