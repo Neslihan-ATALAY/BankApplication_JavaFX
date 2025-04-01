@@ -203,7 +203,7 @@ public class AccountController {
             Locale locale = new Locale("tr", "TR");
             DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MMMM-yyyy HH:mm:ss", locale);
             LocalDateTime now = LocalDateTime.now().format(formatter);
-	    updateDate = Integer.valueOf(now);
+	    updateDate = now;
 	    Optional<AccountDTO> optionalAccountDTO = Optional.ofNullable(AccountDTO.builder()
                 .id(accountId)
                 .userId(userId)
