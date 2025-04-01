@@ -36,7 +36,7 @@ public class LoginController {
         password = passwordField.getText().trim();
 
 	      if (TCNumber == "" || password == "") {
-	          loginDAO.showAlert("Uyarı", "Sisteme girişte TC Kimlik Numarası ve Şifre alanları doldurulmalıdır, lütfen giriş işleminizi tekrar deneyiniz.", Alert.WARNING);
+	          loginDAO.showAlert("Uyarı", "Sisteme girişte TC Kimlik Numarası ve Şifre alanları doldurulmalıdır, lütfen giriş işleminizi tekrar deneyiniz.", Alert.AlertType.WARNING);
 	          loginDAO.switchToPage(FXMLPath.LOGIN, "Giriş");
 	      }
 
@@ -44,17 +44,17 @@ public class LoginController {
 
         if (optionalLoginUserDTO.isPresent()) {
             UserDTO userDTO = optionalLoginUserDTO.get();
-			      loginDAO.setLoginUserId(userDTO.getId());
+	    loginDAO.setLoginUserId(userDTO.getId());
             loginDAO.showAlert("Bilgi", "Giriş Başarılı", Alert.AlertType.INFORMATION);
-	          loginDAO.switchToPage(FXMLPath.INDEX, "Anasayfa");
+	    loginDAO.switchToPage(FXMLPath.INDEX, "Anasayfa");
         } else {
             loginDAO.showAlert("Hata", "Giriş Başarısız", Alert.AlertType.ERROR);
             loginDAO.switchToPage(FXMLPath.LOGIN, "Giriş");
-	      }
+	}
     }
 
     @FXML
     public void switchToPage(String fxmlPath, String title) {
-		    accountDAO.switchToPage(fxmlPath, title);
+	    accountDAO.switchToPage(fxmlPath, title);
     }
 }
